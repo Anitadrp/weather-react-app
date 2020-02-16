@@ -1,31 +1,37 @@
-.App {
+.container {
+  margin: 10px;
+  border: 1px solid #6c757d;
+  border-radius: 20px;
+  box-shadow: 5px 5px 10px 0px rgba(42, 46, 49, 0.3);
   text-align: center;
+  color: black;
+}
+/* searchComponents */
+.search {
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.citySearch {
+  border: 1px solid #6c757d;
+  border-radius: 3px;
+}
+#button-addon2 {
+  border-radius: 3px;
+}
+
+img {
+  height: 100px;
+  width: 100px;
+}
+/* weatherComponents */
+.location {
+  text-align: left;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
 }
 
 @keyframes App-logo-spin {
