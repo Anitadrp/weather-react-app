@@ -1,9 +1,9 @@
 import React from "react";
 
 export default function WeatherItem(props) {
-  let temperature = props.temperature;
+  let temperature = Math.round(props.temperature);
   if (!props.isMetric) {
-    temperature = (temperature * 9) / 5 + 32;
+    temperature = Math.round((temperature * 9) / 5 + 32);
   }
 
   return (

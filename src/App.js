@@ -7,10 +7,22 @@ import SearchBar from "./components/SearchBar";
 import axios from "axios";
 
 function App() {
-  const [city, setCity] = useState("London");
+  const [city, setCity] = useState({ name: "Paris" });
   const [isMetric, setIsMetric] = useState(true);
   const [weatherData, setWeatherData] = useState(null);
   const [forecastData, setForecastData] = useState(null);
+
+  function handleSearchCity(city) {
+    setCity({ name: city });
+  }
+  function handleCurrentLocationClick() {
+    navigator.geolocation.getCurrentPosition(currentPositionCoords);
+  }
+  function currentPositionCoords(position) {
+    const latitude = position.coords.latitude;
+    const longitude = position.coords.longitude;
+    setCity({ latitude, longitude });
+  }
 
   function handleToggleIsMetric() {
     setIsMetric(!isMetric);
@@ -34,10 +46,12 @@ function App() {
   }
 
   function handleForecast(response) {
+    console.log(response);
+
     setForecastData(
       response.data.list.slice(0, 6).map(item => ({
         temperature: item.main.temp,
-        time: new Date(item.dt).toLocaleTimeString().slice(0, 5),
+        time: item.dt_txt,
         iconUrl: `http://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`
       }))
     );
@@ -45,17 +59,28 @@ function App() {
 
   useEffect(() => {
     const apiKey = "3fceae23dde22994db28dbf0244f6a96";
-    const weatherCity = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
-    const forecastCity = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${apiKey}`;
-    axios.get(weatherCity).then(handleWeather);
-    axios.get(forecastCity).then(handleForecast);
-  }, []);
+
+    if (city.name) {
+      const weatherCity = `https://api.openweathermap.org/data/2.5/weather?q=${city.name}&units=metric&appid=${apiKey}`;
+      const forecastCity = `https://api.openweathermap.org/data/2.5/forecast?q=${city.name}&units=metric&appid=${apiKey}`;
+      axios.get(weatherCity).then(handleWeather);
+      axios.get(forecastCity).then(handleForecast);
+    } else {
+      const weatherCityCoordinates = `https://api.openweathermap.org/data/2.5/weather?lat=${city.latitude}&lon=${city.longitude}&units=metric&appid=${apiKey}`;
+      const forecastCityCoordinates = `https://api.openweathermap.org/data/2.5/forecast?lat=${city.latitude}&lon=${city.longitude}&units=metric&appid=${apiKey}`;
+      axios.get(weatherCityCoordinates).then(handleWeather);
+      axios.get(forecastCityCoordinates).then(handleForecast);
+    }
+  }, [city]);
 
   return (
     <div className="container">
       <div className="row searchComponents">
         <img src={logo} className="App-logo" alt="logo" />
-        <SearchBar />
+        <SearchBar
+          onSubmit={handleSearchCity}
+          onCurrentLocationClick={handleCurrentLocationClick}
+        />
       </div>
       <div className="row weatherComponents">
         {weatherData && (
@@ -74,7 +99,7 @@ function App() {
         )}
       </div>
       <div className="row forecastComponents">
-        {forecastData && <Forecast items={forecastData} />}
+        {forecastData && <Forecast items={forecastData} isMetric={isMetric} />}
       </div>
     </div>
   );

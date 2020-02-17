@@ -21,6 +21,7 @@ export default function Weather(props) {
         <WeatherData
           description={props.description}
           wind={props.wind}
+          isMetric={props.isMetric}
           humidity={props.humidity}
           realFeel={props.realFeel}
         />

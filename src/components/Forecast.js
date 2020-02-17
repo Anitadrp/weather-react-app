@@ -8,6 +8,7 @@ export default function Forecast(props) {
         <ForecastItem
           key={index}
           temperature={item.temperature}
+          isMetric={props.isMetric}
           time={item.time}
           iconUrl={item.iconUrl}
         />
