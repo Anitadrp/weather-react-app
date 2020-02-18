@@ -1,5 +1,7 @@
 .container {
-  margin: 10px;
+  font-family: "Raleway", sans-serif;
+  max-width: 600px;
+  margin: 10px auto;
   border: 1px solid #6c757d;
   border-radius: 20px;
   box-shadow: 5px 5px 10px 0px rgba(42, 46, 49, 0.3);
@@ -7,15 +9,22 @@
   color: black;
 }
 /* searchComponents */
+.searchComponents {
+  padding: 5px;
+}
 .search {
   margin: 0;
 }
 
 .citySearch {
+  background-color: rgba(191, 197, 202, 0.5);
   border: 1px solid #6c757d;
   border-radius: 3px;
 }
+
 #button-addon2 {
+  background-color: rgba(191, 197, 202, 0.5);
+  border: 1px solid #6c757d;
   border-radius: 3px;
 }
 
@@ -24,10 +33,39 @@ img {
   width: 100px;
 }
 /* weatherComponents */
+.weatherComponents {
+  padding: 5px;
+}
 .location {
   text-align: left;
 }
 
+.temperatureButton {
+  background: transparent;
+  border: transparent;
+  font-size: 18px;
+  position: absolute;
+  top: 0;
+}
+
+.weatherData {
+  text-align: right;
+  margin-bottom: 0;
+}
+
+.largeValue {
+  font-size: 20px;
+  font-weight: 400;
+}
+p {
+  font-size: 12px;
+  margin-bottom: 0;
+}
+
+/* forecastComponents*/
+.forecastComponents {
+  padding: 5px;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

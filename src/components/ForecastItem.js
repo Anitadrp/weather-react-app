@@ -9,9 +9,10 @@ export default function ForecastItem(props) {
   return (
     <div className="col-4">
       <p>
-        {temperature} {props.isMetric ? "˚C" : "˚F"}
+        <span className="largeValue">{temperature}</span>{" "}
+        {props.isMetric ? "˚C" : "˚F"}
       </p>
-      <p>{props.time}</p>
+      <p>{props.time.slice(11, 16)}</p>
       <img src={props.iconUrl} />
     </div>
   );

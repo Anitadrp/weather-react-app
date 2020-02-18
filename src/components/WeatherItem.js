@@ -10,10 +10,15 @@ export default function WeatherItem(props) {
     <div>
       <h1>
         {temperature} {props.isMetric ? "˚C" : "˚F"}
+        <span>
+          <button
+            className="temperatureButton"
+            onClick={props.onToggleIsMetric}
+          >
+            {props.isMetric ? "˚F" : "˚C"}
+          </button>{" "}
+        </span>
       </h1>
-      <button onClick={props.onToggleIsMetric}>
-        {props.isMetric ? "˚F" : "˚C"}
-      </button>
       <img src={props.iconUrl} />
     </div>
   );

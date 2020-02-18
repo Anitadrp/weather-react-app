@@ -7,7 +7,7 @@ import SearchBar from "./components/SearchBar";
 import axios from "axios";
 
 function App() {
-  const [city, setCity] = useState({ name: "Paris" });
+  const [city, setCity] = useState({ name: "London" });
   const [isMetric, setIsMetric] = useState(true);
   const [weatherData, setWeatherData] = useState(null);
   const [forecastData, setForecastData] = useState(null);

@@ -17,7 +17,7 @@ export default function Weather(props) {
           iconUrl={props.iconUrl}
         />
       </div>
-      <div className="col">
+      <div className="col weatherData">
         <WeatherData
           description={props.description}
           wind={props.wind}
