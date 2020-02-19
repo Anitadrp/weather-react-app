@@ -2,11 +2,12 @@
   font-family: "Raleway", sans-serif;
   max-width: 600px;
   margin: 10px auto;
-  border: 1px solid #6c757d;
-  border-radius: 20px;
+  padding-top: 10px;
+  border: 1px solid #f8f9fa;
+  border-radius: 10px;
   box-shadow: 5px 5px 10px 0px rgba(42, 46, 49, 0.3);
   text-align: center;
-  color: black;
+  color: #f8f9fa;
 }
 /* searchComponents */
 .searchComponents {
@@ -17,17 +18,28 @@
 }
 
 .citySearch {
+  color: black;
   background-color: rgba(191, 197, 202, 0.5);
-  border: 1px solid #6c757d;
+  border: 1px solid #f8f9fa;
   border-radius: 3px;
 }
-
+.citySearch:focus {
+  color: black;
+  background-color: rgba(248, 249, 250, 0.7);
+}
+.citySearch::placeholder {
+  color: #f8f9fa;
+}
 #button-addon2 {
+  color: #f8f9fa;
   background-color: rgba(191, 197, 202, 0.5);
-  border: 1px solid #6c757d;
+  border: 1px solid #f8f9fa;
   border-radius: 3px;
 }
-
+#button-addon2:hover {
+  color: black;
+  background-color: rgba(248, 249, 250, 0.7);
+}
 img {
   height: 100px;
   width: 100px;
@@ -39,8 +51,12 @@ img {
 .location {
   text-align: left;
 }
-
+.weatherItem h1 {
+  margin-top: 8px;
+  margin-bottom: 0;
+}
 .temperatureButton {
+  color: #f8f9fa;
   background: transparent;
   border: transparent;
   font-size: 18px;
@@ -58,6 +74,7 @@ img {
   font-weight: 400;
 }
 p {
+  line-height: 20px;
   font-size: 12px;
   margin-bottom: 0;
 }

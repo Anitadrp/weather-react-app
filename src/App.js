@@ -76,7 +76,6 @@ function App() {
   return (
     <div className="container">
       <div className="row searchComponents">
-        <img src={logo} className="App-logo" alt="logo" />
         <SearchBar
           onSubmit={handleSearchCity}
           onCurrentLocationClick={handleCurrentLocationClick}
@@ -101,6 +100,11 @@ function App() {
       <div className="row forecastComponents">
         {forecastData && <Forecast items={forecastData} isMetric={isMetric} />}
       </div>
+      <p>
+        Open source code on
+        <a href="https://github.com/Anitadrp/weather-react-app"> GitHub </a>by
+        Anitadrp
+      </p>
     </div>
   );
 }
