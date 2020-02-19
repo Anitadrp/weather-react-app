@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import Forecast from "./components/Forecast";
 import Weather from "./components/Weather";
@@ -46,15 +45,15 @@ function App() {
   }
 
   function handleForecast(response) {
-    console.log(response);
-
     setForecastData(
       response.data.list.slice(0, 6).map(item => ({
         temperature: item.main.temp,
         time: item.dt_txt,
-        iconUrl: `http://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`
+        icon: `http://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`,
+        description: item.weather[0].description
       }))
     );
+    console.log(response);
   }
 
   useEffect(() => {
@@ -89,7 +88,7 @@ function App() {
             temperature={weatherData.temperature}
             onToggleIsMetric={handleToggleIsMetric}
             isMetric={isMetric}
-            iconUrl={weatherData.icon}
+            icon={weatherData.icon}
             description={weatherData.description}
             wind={weatherData.wind}
             humidity={weatherData.humidity}

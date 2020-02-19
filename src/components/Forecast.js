@@ -10,7 +10,8 @@ export default function Forecast(props) {
           temperature={item.temperature}
           isMetric={props.isMetric}
           time={item.time}
-          iconUrl={item.iconUrl}
+          icon={item.icon}
+          description={item.description}
         />
       ))}
     </div>

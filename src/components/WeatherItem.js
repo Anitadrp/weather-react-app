@@ -19,7 +19,7 @@ export default function WeatherItem(props) {
           </button>{" "}
         </span>
       </h1>
-      <img src={props.iconUrl} />
+      <img src={props.icon} alt={props.description} />
     </div>
   );
 }

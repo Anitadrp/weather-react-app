@@ -13,7 +13,7 @@ export default function ForecastItem(props) {
         {props.isMetric ? "˚C" : "˚F"}
       </p>
       <p>{props.time.slice(11, 16)}</p>
-      <img src={props.iconUrl} />
+      <img src={props.icon} alt={props.description} />
     </div>
   );
 }

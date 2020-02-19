@@ -46,7 +46,7 @@ export default function SearchBar(props) {
             id="button-addon2"
             onClick={handleCurrentPosition}
           >
-            <i class="fas fa-map-pin"></i>
+            <i className="fas fa-map-pin"></i>
           </button>
         </div>
       </div>

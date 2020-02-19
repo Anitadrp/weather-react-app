@@ -14,7 +14,8 @@ export default function Weather(props) {
           temperature={props.temperature}
           onToggleIsMetric={props.onToggleIsMetric}
           isMetric={props.isMetric}
-          iconUrl={props.iconUrl}
+          icon={props.icon}
+          description={props.description}
         />
       </div>
       <div className="col weatherData">
