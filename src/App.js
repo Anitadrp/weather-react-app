@@ -41,7 +41,6 @@ function App() {
       wind: response.data.wind.speed,
       realFeel: response.data.main.feels_like
     });
-    console.log(response);
   }
 
   function handleForecast(response) {
@@ -53,7 +52,6 @@ function App() {
         description: item.weather[0].description
       }))
     );
-    console.log(response);
   }
 
   useEffect(() => {

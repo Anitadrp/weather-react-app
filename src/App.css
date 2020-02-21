@@ -1,5 +1,5 @@
 .container {
-  background-image: url("./1781058_627137457342016_305895789_o.jpg");
+  background-image: url("/1781058_627137457342016_305895789_o.jpg");
   background-size: cover;
   font-family: "Raleway", sans-serif;
   max-width: 600px;
@@ -75,6 +75,7 @@ img {
   font-size: 20px;
   font-weight: 400;
 }
+
 p {
   line-height: 20px;
   font-size: 12px;
@@ -84,18 +85,4 @@ p {
 /* forecastComponents*/
 .forecastComponents {
   padding: 5px;
-}
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
