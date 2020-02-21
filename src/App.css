@@ -1,4 +1,6 @@
 .container {
+  background-image: url("./1781058_627137457342016_305895789_o.jpg");
+  background-size: cover;
   font-family: "Raleway", sans-serif;
   max-width: 600px;
   margin: 10px auto;
